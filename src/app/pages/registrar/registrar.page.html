@@ -5,5 +5,50 @@
 </ion-header>
 
 <ion-content>
+  <div class="formulario">
+    <h1> Registrate </h1>
 
+    <!-- Elementos del formulario-->
+    <form [formGroup]= "persona" (ngSubmit)="grabar()">
+
+      <ion-item>
+        <ion-label position="fixed">Nombre:</ion-label>
+        <ion-input formControlName="nombre"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">dirección:</ion-label>
+        <ion-input formControlName="direccion"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">correo:</ion-label>
+        <ion-input formControlName="correo"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">contraseña:</ion-label>
+        <ion-input formControlName="pass"> </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="fixed">Repetir contraseña:</ion-label>
+        <ion-input formControlName="rpass"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Sede:</ion-label>
+        <ion-input formControlName="sede"> </ion-input>
+      </ion-item>
+
+      <ion-checkbox color="primary"></ion-checkbox>
+
+      <!-- Botones-->
+      <ion-button color="primary" type="submit">Registrar</ion-button>
+      <ion-button color="secondary" type="submit">Limpiar</ion-button>
+      <ion-button color="tertiary" type="submit">Cancelar</ion-button>
+    </form>
+
+  </div>
 </ion-content>
