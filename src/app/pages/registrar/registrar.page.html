@@ -15,6 +15,8 @@
         <ion-label position="fixed">Nombre:</ion-label>
         <ion-input formControlName="nombre"> </ion-input>
       </ion-item>
+      
+      
 
       <ion-item>
         <ion-label position="fixed">dirección:</ion-label>
@@ -45,9 +47,9 @@
       <ion-checkbox color="primary"></ion-checkbox>
 
       <!-- Botones-->
-      <ion-button color="primary" type="submit">Registrar</ion-button>
-      <ion-button color="secondary" type="submit">Limpiar</ion-button>
-      <ion-button color="tertiary" type="submit">Cancelar</ion-button>
+      <ion-button color="primary" type="submit" [disabled]="!persona.valid">Registrarme</ion-button>
+      <ion-button color="secondary" " >Limpiar</ion-button>
+      <ion-button color="tertiary" routerLink="/home">Cancelar</ion-button>
     </form>
 
   </div>

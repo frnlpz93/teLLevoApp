@@ -23,13 +23,14 @@ export class RegistrarPage implements OnInit {
   sede = new FormControl('');
 
   //Para controlar los elementos como grupo
+  //Se pueden agregar validaciones
   persona = new FormGroup({
-    nombre: new FormControl(''),
-    direccion: new FormControl(''),
+    nombre: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    direccion: new FormControl('',[Validators.required,Validators.minLength(3)]),
     correo: new FormControl('', Validators.email),
-    pass: new FormControl(''),
-    rpass: new FormControl(''),
-    sede: new FormControl('')
+    pass: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    rpass: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    sede: new FormControl('',[Validators.required,Validators.minLength(3)])
   });
 
   //Vamos a crear el btn para la acción grabar
@@ -51,9 +52,18 @@ export class RegistrarPage implements OnInit {
     //Le entregamos los valores de pers a la lista y lo agregamos con un push
     this.listaPersonas.push(this.pers);
     //Guardaremos los valores en una variable localStorage (lo maneja el navegador)
-    localStorage.setItem('Datos',JSON.stringify(this.listaPersonas));
+    localStorage.setItem('Datos', JSON.stringify(this.listaPersonas));
+    alert('persona almacenada!')
 
+  };
+
+  limpiar(){
+    this.pers.reset();
   }
 
 
+
+
 }
+
+
